@@ -14,5 +14,4 @@ def quick_sort(arr):
         else:
             equal.append(i)
     return quick_sort(left)+equal+quick_sort(right)
-
     
