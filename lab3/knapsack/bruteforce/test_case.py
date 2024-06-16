@@ -1,5 +1,5 @@
 import unittest
-from lab3.knapsack.bruteforce.bruteforce import fractional_knapsack
+from lab3.knapsack.bruteforce.fractional import fractional_knapsack
 
 class TestFractionalKnapsack(unittest.TestCase):
     def test_knapsack(self):
