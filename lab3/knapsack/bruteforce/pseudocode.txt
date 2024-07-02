@@ -1,0 +1,41 @@
+#Bruteforce - Fractional Knapsack
+
+Input:
+A list of items, each with a weight and a value.
+The maximum weight capacity of the knapsack.
+
+Output: 
+Maximum value of the weights that can be carried
+
+Algorithm:
+
+
+#Bruteforce - 0/1 Knapsack
+Input:
+A list of items, each with a weight and a value.
+The maximum weight capacity of the knapsack.
+
+Output: 
+Maximum value of the weights that can be carried
+
+Algorithm:
+1. Initialize:
+
+    n = length(weights)
+    max_value = 0
+    max_combination = []
+
+2.Generate all possible combinations of items:
+for i from 0 to 2^n - 1:
+    combination = []
+    total_weight = 0
+    total_value = 0
+    for j from 0 to n - 1:
+        if (i >> j) & 1 == 1:
+        combination.append(j)
+        total_weight += weights[j]
+        total_value += values[j]
+    if total_weight <= capacity and total_value > max_value:
+    max_value = total_value
+    max_combination = combination
+Return max_value and max_combination

@@ -2,6 +2,13 @@ import unittest
 from generatearray import generate_random_array, generate_sorted_array, generate_reverse_sorted_array
 from mergesort import merge_sort
 from quicksort import quick_sort
+import unittest
+class Test(unittest.TestCase):
+    def test_selection_sort(self):
+        arr=generate_random(100)
+        sorted_arr=sorted(arr)
+        self.asertEqual(merge_sort(arr),sorted_arr)
+
 
 class TestSortingAlgorithms(unittest.TestCase):
 

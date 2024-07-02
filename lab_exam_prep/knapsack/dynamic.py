@@ -13,6 +13,7 @@ def knapsacksol(prof,wt,cap,current):
     return max(prof1,prof2)
 
 weights = [2, 3, 6, 5]
-values = [1, 2, 5, 8]
+values = [1, 0, 5, 8]
 capacity = 8
 kn=knapsack(values,weights,capacity)
+print(kn)

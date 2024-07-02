@@ -1,0 +1,25 @@
+Input:
+A list of items, each with a weight and a value.
+The maximum weight capacity of the knapsack.
+
+Output: 
+Maximum value of the weights that can be carried
+
+Algorithm:
+1. Initialize:
+    n = length(weights)
+    items = [(values[i] / weights[i], weights[i], values[i]) for i in range(n)]
+    items.sort(by=lambda x: x[0], reverse=True)
+    total_value = 0
+    remaining_capacity = capacity
+
+2. Iterate through the sorted items:
+    for item in items:
+        if item[1] <= remaining_capacity:
+            remaining_capacity -= item[1]
+            total_value += item[2]
+        else:
+            total_value += item[0] * remaining_capacity
+            break
+    Return total_value
+

@@ -1,0 +1,27 @@
+Input:
+A list of items, each with a weight and a value.
+The maximum weight capacity of the knapsack.
+
+Output: 
+Maximum value of the weights that can be carried
+
+Algorithm:
+1. Initialize:
+    n = length(weights)
+    dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
+
+2. Base Case:
+
+    for w from 0 to capacity:
+        dp[0][w] = 0
+    for i from 0 to n:
+        dp[i][0] = 0
+
+3.Fill the DP Table:
+    for i from 1 to n:
+        for w from 1 to capacity:
+            if weights[i-1] <= w:
+                dp[i][w] = max(values[i-1] + dp[i-1][w-weights[i-1]], dp[i-1][w])
+            else:
+                dp[i][w] = dp[i-1][w]
+    Return dp[n][capacity]
